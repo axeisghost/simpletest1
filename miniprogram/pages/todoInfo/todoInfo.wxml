@@ -1,0 +1,7 @@
+<van-cell-group border="{{false}}">
+	<van-cell 
+  title="{{task.title}}" 
+  border="{{false}}" 
+  value="{{task.status === 'in-progress'?'嗯':'否'}}"
+  />
+</van-cell-group>

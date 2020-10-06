@@ -49,13 +49,32 @@
 		"game": {
 			"list": []
 		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
 		"miniprogram": {
 			"current": 0,
 			"list": [
 				{
 					"id": -1,
 					"name": "db guide",
-					"pathName": "pages/databaseGuide/databaseGuide"
+					"pathName": "pages/databaseGuide/databaseGuide",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "addTodo",
+					"pathName": "pages/addTodo/addTodo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "todoInfo",
+					"pathName": "pages/todoInfo/todoInfo",
+					"query": "id=d782d4875f7c6ec200f2008613940691",
+					"scene": null
 				}
 			]
 		}
