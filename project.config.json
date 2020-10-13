@@ -54,26 +54,20 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": -1,
 			"list": [
 				{
 					"id": -1,
-					"name": "db guide",
-					"pathName": "pages/databaseGuide/databaseGuide",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "addTodo",
-					"pathName": "pages/addTodo/addTodo",
+					"name": "index",
+					"pathName": "pages/index/index",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": 2,
-					"name": "todoInfo",
-					"pathName": "pages/todoInfo/todoInfo",
-					"query": "id=8e5be7055f829bc2019758211ef1cbc1",
+					"name": "main",
+					"pathName": "pages/main/main",
+					"query": "",
 					"scene": null
 				}
 			]

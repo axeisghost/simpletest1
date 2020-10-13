@@ -1,26 +1,54 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/addTodo/addTodo",
-    "pages/todoInfo/todoInfo"
+    "pages/main/main",
+    "pages/cart/cart",
+    "pages/me/me"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云代办",
+    "navigationBarTitleText": "Simple日式简餐",
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",
   "usingComponents": {
-    "van-button": "@vant/weapp/button",  
+    "van-button": "@vant/weapp/button",
     "van-cell": "@vant/weapp/cell",
     "van-cell-group": "@vant/weapp/cell-group",
-    "van-icon": "@vant/weapp/icon"
+    "van-icon": "@vant/weapp/icon",
+    "van-sidebar": "@vant/weapp/sidebar/index",
+    "van-sidebar-item": "@vant/weapp/sidebar-item/index",
+    "van-notify": "@vant/weapp/notify/index",
+    "van-card": "@vant/weapp/card/index"
   },
   "permission": {
     "scope.userLocation": {
       "desc": "您的位置将用于任务的设定"
     }
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/main/main",
+        "text": "点单",
+        "iconPath": "icons/home1.png",
+        "selectedIconPath": "icons/home2.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "icons/get1.png",
+        "selectedIconPath": "icons/get2.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "icons/me1.png",
+        "selectedIconPath": "icons/me2.png"
+      }
+    ],
+    "selectedColor": "black"
   }
 }

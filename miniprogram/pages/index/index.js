@@ -1,65 +1,63 @@
-const db = wx.cloud.database();
-const todos = db.collection('todos');
+//index.js
+//获取应用实例
+const app = getApp()
 
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-    tasks: []
+    userInfo: {},
+    hasUserInfo: false,
+    canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    this.getData();
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-  onReachBottom: function () {
-    this.getData();
-  },
-  onPullDownRefresh: function () {
-    this.getData(res => {
-      wx.stopPullDownRefresh();
-      this.pageData.skip = 0;
-    });
-  },
-
-  getData: function (callback) {
-    if (!callback) {
-      callback = res => {}
-    }
-    wx.showLoading({
-      title: '数据加载中',
+  bindViewTap: function () {
+    wx.navigateTo({
+      url: '../main/main'
     })
-    todos.skip(this.pageData.skip).get().then(res => {
-      let oldData = this.data.tasks;
+  },
+  onLoad: function () {
+    if (app.globalData.userInfo) {
       this.setData({
-        tasks: oldData.concat(res.data)
-      }, res => {
-        this.pageData.skip = this.pageData.skip + 20
-        wx.hideLoading()
-        callback();
+        userInfo: app.globalData.userInfo,
+        hasUserInfo: true
       })
-    })
+    } else if (this.data.canIUse) {
+      app.userInfoReadyCallback = res => {
+        this.setData({
+          userInfo: res.userInfo,
+          hasUserInfo: true
+        })
+      }
+    } else {
+      wx.getUserInfo({
+        success: ret => {
+          console.log('hxere')
+          console.log(res)
+          app.globalData.userInfo = res.userInfo
+          this.setData({
+            userInfo: res.userInfo,
+            hasUserInfo: true
+          })
+        }
+      })
+    }
   },
-  pageData: {
-    skip: 0
-  }
+  getUserInfo: function (e) {
+    wx.cloud.callFunction({
+      name: 'newlogin',
+      data:{a:10,b:20},
+      success: res => {
+        console.log('success')
+        console.log('callFunction test result: ', res)
+      }
+    })
+      fail:err => {
+        console.log('error')
+        console.log(err)
+      }
 
+    app.globalData.userInfo = e.detail.userInfo
+    this.setData({
+        userInfo: e.detail.userInfo,
+        hasUserInfo : true
+     })
+  }
 })
