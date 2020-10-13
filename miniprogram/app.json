@@ -15,6 +15,12 @@
   "usingComponents": {
     "van-button": "@vant/weapp/button",  
     "van-cell": "@vant/weapp/cell",
-    "van-cell-group": "@vant/weapp/cell-group"
+    "van-cell-group": "@vant/weapp/cell-group",
+    "van-icon": "@vant/weapp/icon"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "您的位置将用于任务的设定"
+    }
   }
 }

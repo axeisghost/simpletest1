@@ -23,11 +23,16 @@ Page({
       })
     })
   },
-
+  viewLocation:function(){
+    wx.openLocation({
+      latitude: this.data.task.location.latitude,
+      longitude: this.data.task.location.latitude,
+      name: this.data.task.location.name,
+      address:this.data.task.location.address
+    })
+  }
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
 
-  }
 })
