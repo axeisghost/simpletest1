@@ -1,6 +1,6 @@
 <view class="container">
 	<view class="nav_left">
-		<van-sidebar active-key="{{ activeKey }}" bind:change="onChange">
+		<van-sidebar active-key="{{ activeKey }}" bind:change="onChange" >
 			<van-sidebar-item title="推荐" />
 			<van-sidebar-item title="进店必买" />
 			<van-sidebar-item title="随便点都好吃" badge="5" />
@@ -11,7 +11,6 @@
 		</van-sidebar>
 		<van-notify id="van-notify" />
 	</view>
-
 	<view class="nav_right">
 		<block>
 			<van-card price="10.00" desc="描述信息" title="商品标题" thumb="cloud://simple-0x5eh.7369-simple-0x5eh-1303834947/simple_food/taocan_feiniufan.jpeg" thumb-mode>

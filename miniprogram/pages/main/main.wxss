@@ -8,19 +8,21 @@ page{
   height: 100%;
   background-color: #fff;
   color: #fff;
+  overflow: hidden;
 }
  
 /*左侧栏主盒子*/
 .nav_left{
   /*设置行内块级元素（没使用定位）*/
   display: inline-block;
-  width: 10rpx;
+  width: 30%;
   height: 70%;
   /*主盒子设置背景色为灰色*/
   background: #919191;
   text-align: center;
+  overflow: scroll;
+  max-height: 450px;
 }
-
 
 /*右侧栏主盒子*/
 .nav_right{
@@ -30,8 +32,9 @@ page{
   right: 0;
   flex: 1;
   /*宽度75%，高度占满，并使用百分比布局*/
-  width: 75%;
+  width: 60%;
   height: 100%;
   box-sizing: border-box;
   background: #fff;
+  overflow: scroll;
 }
